@@ -1,6 +1,6 @@
 console.log("Client side javascript file is loaded!");
 
-fetch("http://localhost:3000/weather?address=Boston").then((response) => {
+fetch("/weather?address=Boston").then((response) => {
     response.json().then((data) => {
         if (data.error) {
             return console.log("Error")
@@ -24,7 +24,7 @@ weatherForm.addEventListener("submit", (e) => {
     messageOne.textContent = "Loading..."
     messageTwo.textContent = ""
 
-    fetch("http://localhost:3000/weather?address=" + location).then((response) => {
+    fetch("/weather?address=" + location).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 return messageOne.textContent = data.error
